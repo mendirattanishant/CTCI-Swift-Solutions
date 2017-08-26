@@ -16,8 +16,26 @@ extension String {
         
         return true
     }
+    
+    func isPermutation(_ secondString: String) -> Bool {
+        if self.characters.count != secondString.characters.count {
+            return false
+        }
+        
+        if self.characters.sorted() != secondString.characters.sorted() {
+            return false
+        }
+        
+        
+        return true
+    }
 }
 
 print("hello".isUniqueCharacterString())
 print("fox".isUniqueCharacterString())
 print("aab".isUniqueCharacterString())
+
+print("helo".isPermutation("helo"))
+print("fox".isPermutation("xoff"))
+print("aab".isPermutation("baa"))
+
